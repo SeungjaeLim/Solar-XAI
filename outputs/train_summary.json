@@ -1,0 +1,65 @@
+{
+  "persistence": {
+    "val_mae": 0.29162153808947733,
+    "test_mae": 0.2824372420288273
+  },
+  "ridge": {
+    "val_mae": 0.013525756282049025,
+    "test_mae": 0.017418513490410986
+  },
+  "lgbm": {
+    "val_mae": 0.0138169289913374,
+    "test_mae": 0.014612325377001713,
+    "params": {
+      "num_leaves": 61,
+      "learning_rate": 0.014914546778121106,
+      "feature_fraction": 0.6763338223031531,
+      "bagging_fraction": 0.7006037754480285,
+      "bagging_freq": 2,
+      "min_data_in_leaf": 31,
+      "lambda_l1": 0.38969471586495824,
+      "lambda_l2": 1.5584091936061732,
+      "max_depth": 8,
+      "n_estimators": 1208
+    }
+  },
+  "xgb": {
+    "val_mae": 0.014299585297430284,
+    "test_mae": 0.016507663085649257,
+    "params": {
+      "learning_rate": 0.017978770479911952,
+      "max_depth": 3,
+      "min_child_weight": 0.37619889107603377,
+      "subsample": 0.6003761524281565,
+      "colsample_bytree": 0.8865594789981684,
+      "reg_alpha": 0.06960237642084184,
+      "reg_lambda": 0.8012393366066163,
+      "n_estimators": 1713
+    }
+  },
+  "cat": {
+    "val_mae": 0.014011397734020343,
+    "test_mae": 0.01372024319905601,
+    "params": {
+      "iterations": 878,
+      "depth": 6,
+      "learning_rate": 0.005468641390590814,
+      "l2_leaf_reg": 0.3444856608499859,
+      "random_strength": 0.07398294920836908,
+      "bagging_temperature": 0.26382755997565566,
+      "border_count": 160
+    }
+  },
+  "lstm": {
+    "val_mae": 0.09470909955577718,
+    "test_mae": 0.08760752893664175,
+    "params": {
+      "hidden_size": 128,
+      "num_layers": 2,
+      "dropout": 0.11257892078202514,
+      "window": 72,
+      "lr": 0.0005782272875976323,
+      "batch_size": 128
+    }
+  }
+}
