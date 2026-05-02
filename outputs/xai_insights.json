@@ -1,0 +1,107 @@
+{
+  "top_features_mean_abs_shap": {
+    "irrad_x_cos_zenith": 0.041042473118670035,
+    "power_lag_168": 0.020534778361051966,
+    "temp_delta": 0.017807138323759294,
+    "power_lag_6": 0.017789424839765935,
+    "hour": 0.017307079337338892,
+    "power_roll_std_6": 0.014169768954603621,
+    "cos_zenith": 0.01378620992099651,
+    "yesterday_residual": 0.0068553751346412785,
+    "d_irrad_1h": 0.0047435604416253135,
+    "cloud_index": 0.0037353044304894068
+  },
+  "worst_cases": [
+    {
+      "ts": "2025-07-23 10:00:00",
+      "y_true": 0.8952663619645397,
+      "y_pred": 0.12328371562197797,
+      "abs_err": 0.7719826463425618,
+      "top_drivers": "temp_delta(-0.037), cos_zenith(+0.025), power_lag_168(+0.021)"
+    },
+    {
+      "ts": "2025-07-19 05:00:00",
+      "y_true": 0.75,
+      "y_pred": 0.01533076480014795,
+      "abs_err": 0.734669235199852,
+      "top_drivers": "irrad_x_cos_zenith(-0.022), power_lag_168(-0.020), temp_delta(-0.013)"
+    },
+    {
+      "ts": "2025-07-20 06:00:00",
+      "y_true": 0.7534915667401298,
+      "y_pred": 0.05672743015179661,
+      "abs_err": 0.6967641365883332,
+      "top_drivers": "irrad_x_cos_zenith(-0.023), power_lag_168(+0.021), yesterday_residual(+0.016)"
+    },
+    {
+      "ts": "2025-07-29 08:00:00",
+      "y_true": 0.714224051925281,
+      "y_pred": 0.02549976998547217,
+      "abs_err": 0.6887242819398088,
+      "top_drivers": "irrad_x_cos_zenith(-0.024), power_lag_168(+0.021), cos_zenith(-0.020)"
+    },
+    {
+      "ts": "2025-07-10 07:00:00",
+      "y_true": 0.7510042975362243,
+      "y_pred": 0.09568862969821654,
+      "abs_err": 0.6553156678380078,
+      "top_drivers": "power_roll_std_6(+0.058), irrad_x_cos_zenith(-0.030), power_lag_168(+0.021)"
+    },
+    {
+      "ts": "2025-07-09 07:00:00",
+      "y_true": 0.75,
+      "y_pred": 0.09568862969821654,
+      "abs_err": 0.6543113703017834,
+      "top_drivers": "power_roll_std_6(+0.058), power_lag_168(+0.021), irrad_x_cos_zenith(-0.018)"
+    },
+    {
+      "ts": "2025-07-28 08:00:00",
+      "y_true": 0.7139109031211319,
+      "y_pred": 0.060258816649906385,
+      "abs_err": 0.6536520864712255,
+      "top_drivers": "irrad_x_cos_zenith(-0.037), yesterday_residual(+0.022), power_lag_168(+0.021)"
+    },
+    {
+      "ts": "2025-07-22 15:00:00",
+      "y_true": 0.6947099366065824,
+      "y_pred": 0.04982651661782988,
+      "abs_err": 0.6448834199887525,
+      "top_drivers": "temp_delta(-0.049), hour(-0.048), power_lag_168(+0.021)"
+    },
+    {
+      "ts": "2025-07-26 16:00:00",
+      "y_true": 0.7556934093371053,
+      "y_pred": 0.14827719504910625,
+      "abs_err": 0.6074162142879991,
+      "top_drivers": "hour(-0.043), irrad_x_cos_zenith(-0.037), temp_delta(+0.032)"
+    },
+    {
+      "ts": "2025-07-14 08:00:00",
+      "y_true": 0.75,
+      "y_pred": 0.15213962002938056,
+      "abs_err": 0.5978603799706195,
+      "top_drivers": "power_roll_std_6(+0.058), temp_delta(-0.040), irrad_x_cos_zenith(+0.024)"
+    },
+    {
+      "ts": "2025-07-13 10:00:00",
+      "y_true": 0.75,
+      "y_pred": 0.2271307491500076,
+      "abs_err": 0.5228692508499924,
+      "top_drivers": "irrad_x_cos_zenith(+0.057), power_roll_std_6(+0.054), power_lag_168(+0.021)"
+    },
+    {
+      "ts": "2025-07-27 09:00:00",
+      "y_true": 0.75,
+      "y_pred": 0.2466361493021851,
+      "abs_err": 0.5033638506978149,
+      "top_drivers": "irrad_x_cos_zenith(+0.102), power_roll_std_6(+0.022), power_lag_168(+0.021)"
+    }
+  ],
+  "counterfactual_irradiation_median_delta": {
+    "-20%": 0.0,
+    "-10%": 0.0,
+    "+0%": 0.0,
+    "+10%": 0.0,
+    "+20%": 0.0
+  }
+}

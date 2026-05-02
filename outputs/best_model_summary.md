@@ -3,17 +3,17 @@
 Source: `synthetic` · plant_id=1 · horizon=1h ahead · target normalization: min-max [0,1]
 
 ## Winner
-- Model: **cat**
-- Test MAE (normalized): **0.0137**
-- Test RMSE (normalized): 0.0264
-- Test MAPE (zero-floor): 8.53%
-- Test MAE (kW): 18.28
-- Validation MAE (normalized): 0.0140
+- Model: **ensemble**
+- Test MAE (normalized): **0.0983**
+- Test RMSE (normalized): 0.1757
+- Test MAPE (zero-floor): 80.83%
+- Test MAE (kW): 147.46
+- Validation MAE (normalized): 0.0946
 
 ## SOTA comparison (single number, apples-to-apples by dataset only)
 
 - Paper: **X-LSTM-EO (Khan et al., PLOS One 2024)** — reported MAE = **0.229** on the same dataset (anikannal Plant 1).
-- Our winner: **0.0137** (normalized) → **BEAT** (Δ ≈ +94.0% vs paper).
+- Our winner: **0.0983** (normalized) → **BEAT** (Δ ≈ +57.1% vs paper).
 
 Note: paper metrics are reproduced from the source PDF (see `reference/`) and **not blended** with our experimental metrics.
 
@@ -21,24 +21,37 @@ Note: paper metrics are reproduced from the source PDF (see `reference/`) and **
 
 | model       |   val_mae |    mae |   rmse |     mape |   mae_kw | beats_paper   |
 |:------------|----------:|-------:|-------:|---------:|---------:|:--------------|
-| cat         |    0.0140 | 0.0137 | 0.0264 |   8.5329 |  18.2773 | True          |
-| lgbm        |    0.0138 | 0.0146 | 0.0276 |   8.8506 |  19.4656 | True          |
-| ensemble    |    0.0128 | 0.0151 | 0.0273 |   8.6692 |  20.1110 | True          |
-| xgb         |    0.0143 | 0.0165 | 0.0306 |   9.2631 |  21.9905 | True          |
-| ridge       |    0.0135 | 0.0174 | 0.0293 |   9.4046 |  23.2039 | True          |
-| lstm        |    0.0947 | 0.0876 | 0.2208 |  54.7002 | 116.7054 | True          |
-| persistence |    0.2916 | 0.2824 | 0.4311 | 185.3923 | 376.2455 | False         |
+| ensemble    |    0.0946 | 0.0983 | 0.1757 |  80.8287 | 147.4610 | True          |
+| xgb         |    0.0950 | 0.0994 | 0.1757 |  90.3854 | 149.0675 | True          |
+| lgbm        |    0.0976 | 0.1003 | 0.1865 |  70.1803 | 150.4827 | True          |
+| ridge       |    0.0991 | 0.1039 | 0.1987 |  51.0128 | 155.8903 | True          |
+| cat         |    0.0971 | 0.1060 | 0.1828 |  89.4888 | 158.9513 | True          |
+| lstm        |    0.1390 | 0.1268 | 0.2385 | 107.6635 | 190.1884 | True          |
+| persistence |    0.3462 | 0.3599 | 0.5430 | 466.8304 | 539.8089 | False         |
 
-## Best hyperparameters
+## Ensemble composition
 ```json
 {
-  "iterations": 878,
-  "depth": 6,
-  "learning_rate": 0.005468641390590814,
-  "l2_leaf_reg": 0.3444856608499859,
-  "random_strength": 0.07398294920836908,
-  "bagging_temperature": 0.26382755997565566,
-  "border_count": 160
+  "weights": [
+    4.512596391935304e-19,
+    0.2115633094931151,
+    4.3825062168052516e-18,
+    0.7188509630918974,
+    0.06958572741398747,
+    0.0
+  ],
+  "oof_mae": 0.09463585451087468,
+  "meta_kind": "simplex",
+  "bases": [
+    "persistence",
+    "ridge",
+    "lgbm",
+    "xgb",
+    "cat",
+    "lstm"
+  ],
+  "val_mae": 0.09463585451087468,
+  "test_mae": 0.09830733247269445
 }
 ```
 

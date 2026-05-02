@@ -1,10 +1,10 @@
 {
-  "hidden_size": 128,
-  "num_layers": 2,
-  "dropout": 0.11257892078202514,
-  "window": 72,
-  "lr": 0.0005782272875976323,
-  "batch_size": 128,
+  "hidden_size": 96,
+  "num_layers": 1,
+  "dropout": 0.24040164940927455,
+  "window": 48,
+  "lr": 0.001970157114829891,
+  "batch_size": 32,
   "seeds": [
     42,
     7,
