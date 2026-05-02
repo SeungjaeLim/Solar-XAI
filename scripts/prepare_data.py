@@ -166,7 +166,7 @@ def main() -> None:
     feats["target_kw"] = feats["target"]
     feats["target"] = (feats["target"] - y_min) / span
 
-    splits = time_ordered_split(feats, train_frac=0.70, val_frac=0.15)
+    splits = time_ordered_split(feats, train_frac=0.55, val_frac=0.20)
 
     feats.to_parquet(proc_dir / "features.parquet", index=False)
     manifest = {
